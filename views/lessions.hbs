@@ -1,33 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
+<layout>
+    <navbar>
+        <brand> Lession Materials </brand>
+    </navbar>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="sui.css">
-    <script src="./sui.js"></script>
-    <title> Groups </title>
-</head>
-
-<body variant="light">
-
-    <layout>
-        <navbar>
-            <brand> Lession Materials </brand>
-        </navbar>
-
-        <content >
-            <aside vertical background="">
-                <a href="#">
-                    <icon name="collection"></icon>
-                    Node.js 146
-                </a>
-            </aside>
-            <main padding="30px">
-                
-            </main>
-        </content>
-    </layout>
-</body>
-</html>
+    <content>
+        <aside vertical background="">
+            {{#each groups}}
+            <a href="/{{path}}">
+                <icon name="collection"></icon>
+                {{name}}
+            </a>
+            {{/each}}
+        </aside>
+        <main padding="30px">
+                <h3 margin="20px 0"> {{group.name}} </h3>
+                <grid column="4" gap="20px">
+                    <card>
+                        <heading> 1. Lession title </heading>
+                        <content>
+                            <v-stack>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, qui.
+                                <span style="font-size: 14px; color: gray;"> 10.11.2022 </span>
+                            </v-stack>
+                        </content>
+                        <actions>
+                            <a href="#"> Goto Lession </a>
+                        </actions>
+                    </card>
+                </grid>
+        </main>
+    </content>
+</layout>
