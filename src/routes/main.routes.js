@@ -18,7 +18,8 @@ router.get('/:path', (req, res) => {
     res.render('lessions', {
         groups,
         name: group.name,
-        lessions: group.lessions
+        path: group.path,
+        lessions: group.lessions,
     })
 })
 

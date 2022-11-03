@@ -13,20 +13,22 @@
             {{/each}}
         </aside>
         <main padding="30px">
-                <h3 margin="20px 0"> {{group.name}} </h3>
+                <h3 margin="20px 0"> {{name}} </h3>
                 <grid column="4" gap="20px">
+                    {{#each lessions}}
                     <card>
-                        <heading> 1. Lession title </heading>
+                        <heading> {{title}} </heading>
                         <content>
                             <v-stack>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, qui.
-                                <span style="font-size: 14px; color: gray;"> 10.11.2022 </span>
+                                {{description}}
+                                <span style="font-size: 14px; color: gray;"> {{date}} </span>
                             </v-stack>
                         </content>
                         <actions>
-                            <a href="#"> Goto Lession </a>
+                            <a href="/{{path}}/"> Goto Lession </a>
                         </actions>
                     </card>
+                     {{/each}}
                 </grid>
         </main>
     </content>
