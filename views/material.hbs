@@ -1,13 +1,43 @@
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
 <v-stack>
-    <h1> {{title}} </h1>
-    <span> {{date}} </span>
-    <hr>
-    <v-stack id="content">
+    <navbar>
+        <brand>
+            <a href="/">
+                <icon name="arrow-left"></icon> 
+            </a>
+            {{group}} - {{number}}. {{theme}} 
+         </brand>
+    </navbar>
+
+    <v-stack background="white" width="70%" margin="0 auto" padding="30px">
+
+        <h1> {{description}} </h1>
+        <span> {{date}} </span>
         
+        <hr>
+
+        <v-stack id="content" margin="0 0 0 0">
+        </v-stack>
+        
+        <hr>
+
+        <h4> Attachments </h4>
+        
+        <flex gap="10px">
+            {{#each files}}
+            <a href="/{{../code}}/{{../number}}/files/{{this}}">
+                <icon name="paperclip"></icon>
+                {{this}}
+            </a>
+            {{/each}}
+        </flex>
+
     </v-stack>
+
 </v-stack>
 <script>
-    fetch({{filePath}})
+    fetch('/{{code}}/{{number}}/material')
         .then((response) => response.text())
         .then(text => {
             document.getElementById('content').innerHTML = marked.parse(text);

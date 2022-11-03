@@ -1,0 +1,7 @@
+{
+    "number": 1,
+    "theme": "Express intro",
+    "description": "Intro to Node.js express routing",
+    "date": "04.11.2022",
+    "tags": ["express", "cors", "handlebars"]
+}

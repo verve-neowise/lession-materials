@@ -4,7 +4,7 @@
     "description": "Lession monitoring system",
     "main": "index.js",
     "scripts": {
-        "dev": "nodemon src/index.ts",
+        "dev": "nodemon -e ts src/index.ts",
         "start": "npx ts-node src/index.ts",
         "deploy": "pm2 restart lms",
         "mock": "ts-node mocks/mock.ts",

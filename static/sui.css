@@ -7,6 +7,7 @@
     --primary500: rgb(31, 180, 111);
     --primary200: rgba(40, 204, 127, 0.1);
     --default: 10px 15px;
+    --default-2: 15px 20px;
     --radius: 10px;
     --shadow: 0px 2px 5px 0px rgba(22, 22, 22, 0.171);
     --shadow-2x: 0px 0px 15px 0px rgba(22, 22, 22, 0.09);
@@ -206,6 +207,14 @@ navbar brand {
     font-size: 24px;
     font-weight: 600;
     color: var(--dark);
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+navbar brand a icon {
+    font-size: 24px;
+    padding: 0;
 }
 
 navbar links {
@@ -246,6 +255,7 @@ navbar links a icon:nth-child(2) {
 aside {
     min-width: 100px;
     background-color: white;
+    border-right: 1px solid var(--divider100);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -611,22 +621,54 @@ card content {
 
 card actions {
     display: flex;
-    padding: var(--default);
+    padding: var(--default-2);
     align-items: center;
     gap: 10px;
     justify-content: flex-end;
 }
 
 a {
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    padding: var(--default);
+    align-items: center;
+    justify-content: center;
     color: var(--primary);
+    gap: 10px;
+    transition: all 0.5s 0s ease;
 }
 
 a:hover {
-    text-decoration-color: var(--primary);
-    text-decoration-line: 1px;
-    text-decoration: solid ;
+    background-color: var(--primary200);
+    border-radius: var(--radius);
+}
+
+a:active {
+    transform: scale(0.95);
+}
+
+a:active icon {
+    background-color: transparent;
+}
+
+a icon {
+    color: var(--primary);
+    border-radius: var(--radius);
 }
 
 flex {
     display: flex;
+}
+
+code {
+    width: 100%;
+    background-color: var(--dark900);
+    border-radius: var(--radius);
+    padding: var(--default);
+    font-size: 13px;
+    font-family: monospace;
+    display: block;
+    color: var(--dark);
+    margin: 10px 0px;
 }

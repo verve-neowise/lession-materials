@@ -1,0 +1,7 @@
+{
+    "number": 2,
+    "theme": "Routes",
+    "description": "Routes - GET POST PUT DELETE",
+    "date": "06.11.2022",
+    "tags": ["express", "cors", "handlebars"]
+}
