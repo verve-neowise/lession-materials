@@ -1,0 +1,57 @@
+{
+    "name": "lessions-monitoring-system",
+    "version": "1.0.0",
+    "description": "Lession monitoring system",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon src/index.ts",
+        "start": "npx ts-node src/index.ts",
+        "deploy": "pm2 restart lms",
+        "mock": "ts-node mocks/mock.ts",
+        "test": "echo \"No tests available\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/verve-neowise/lessions-monitoring-system.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/verve-neowise/lessions-monitoring-system/issues"
+    },
+    "homepage": "https://github.com/verve-neowise/lessions-monitoring-system#readme",
+    "devDependencies": {
+        "@types/bcrypt": "^5.0.0",
+        "@types/cors": "^2.8.12",
+        "@types/dotenv": "^8.2.0",
+        "@types/express": "^4.17.14",
+        "@types/jsonwebtoken": "^8.5.9",
+        "@types/node": "^18.8.1",
+        "prisma": "^4.4.0",
+        "tsconfig-paths": "^4.1.0"
+    },
+    "dependencies": {
+        "@prisma/client": "^4.4.0",
+        "@verve-neowise/express-validius": "^0.0.1",
+        "@verve-neowise/validius": "^1.0.4",
+        "bcrypt": "^5.0.1",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.1",
+        "express-handlebars": "^6.0.6",
+        "jsonwebtoken": "^8.5.1",
+        "module-alias": "^2.2.2",
+        "ts-node": "^10.9.1",
+        "tsconfig-paths": "^4.1.0",
+        "typescript": "^4.8.4"
+    },
+    "_moduleAliases": {
+        "@configs": "lib/configs",
+        "@controllers": "lib/controllers",
+        "@middlewares": "lib/middlewares",
+        "@models": "lib/models",
+        "@routes": "lib/routes",
+        "@schemas": "lib/schemas",
+        "@services": "lib/services"
+    }
+}

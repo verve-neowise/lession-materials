@@ -1,0 +1,118 @@
+{
+	// Place your Рабочая область lessions-monitoring-system snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"Router": {
+		"scope": "typescript, javascript",
+		"prefix": "rest:r",
+		"body": [
+			"import { Router } from 'express';",
+			"",
+			"import { all$1s, create$1, delete$1, update$1 } from '@controllers/$2s/index';",
+			"import { permissions } from '@middlewares/index';",
+			"",
+			"const router = Router()",
+			"",
+			"router.use(permissions('$2s'))",
+			"",
+			"router.get('/', all$1s)",
+			"router.post('/', create$1)",
+			"router.put('/:id', update$1)",
+			"router.delete('/:id', delete$1)",
+			"",
+			"export default router",
+			]
+	},
+
+	"Rest Service": {
+		"scope": "typescript, javascript",
+		"prefix": "rest:s",
+		"body": [
+			"import { PrismaClient } from '@prisma/client'",
+			"",
+			"const prisma = new PrismaClient()",
+			"",
+			"export const all$2s = async () => {",
+			"    return prisma.${1}.findMany()",
+			"}",
+			"",
+			"export const find$2ById = async (id: number) => {",
+			"    return prisma.${1}.findUnique({",
+			"        where: {",
+			"            id",
+			"        }",
+			"    })",
+			"}",
+			"",
+			"export const is$2Exists = async (id: number) => {",
+			"    const ${1} = await find$2ById(id)",
+			"    return ${1} !== null",
+			"}",
+			"",
+			"export const create$2= async (data: any) => {",
+			"    return prisma.${1}.create({",
+			"        data: data",
+			"    })",
+			"}",
+			"",
+			"export const update$2= async (id: number, data: any) => {",
+			"    return prisma.${1}.update({",
+			"        where: {",
+			"            id",
+			"        },",
+			"        data: data",
+			"    })",
+			"}",
+			"",
+			"export const delete$2 = async (id: number) => {",
+			"    return prisma.${1}.delete({",
+			"        where: {",
+			"            id",
+			"        }",
+			"    })",
+			"}",
+			]
+			
+	},
+
+	"Controller": {
+		"scope": "typescript",
+		"prefix": "rest:c",
+		"body": [
+			"import { Request, Response, NextFunction } from 'express';\n",
+			"export default async (req: Request, res: Response, next: NextFunction) => {",
+			"\ttry {", 
+			"\t\t$0",
+			"\t}",
+			"\tcatch(err) {",
+			"\t\tnext(err)",
+			"\t}",
+			"}"
+		]
+	}
+
+	/**
+	import { Request, Response, NextFunction } from 'express';
+
+export default async (req: Request, res: Response, next: NextFunction) => {
+    try {  }
+    catch(err) {
+        next(err)
+    }
+}
+	*/
+}

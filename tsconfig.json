@@ -1,0 +1,31 @@
+{
+   "ts-node": {
+        // Do not forget to `npm i -D tsconfig-paths`
+        "require": ["tsconfig-paths/register"]
+    },
+  "include": ["src/**/*", "mocks"],
+  "exclude": ["node_modules", "__test__", "lib"],
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["node_modules/*"],
+      "@configs/*" : ["./configs/*"],
+      "@controllers/*" : ["./controllers/*"],
+      "@middlewares/*": ["./middlewares/*"],
+      "@models/*": ["./models/*"],
+      "@routes/*": ["./routes/*"],
+      "@schemas/*": ["./schemas/*"],
+      "@services/*": ["./services/*"],
+    },
+    "rootDirs": ["src", "mocks"],
+    "outDir": "lib",
+    "target": "ESNext",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "module": "commonjs",                                /* Specify what module code is generated. */
+    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
+    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
+    "strict": true,                                      /* Enable all strict type-checking options. */
+    "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
+  }
+}
+
+// 

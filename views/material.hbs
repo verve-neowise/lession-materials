@@ -1,0 +1,15 @@
+<v-stack>
+    <h1> {{title}} </h1>
+    <span> {{date}} </span>
+    <hr>
+    <v-stack id="content">
+        
+    </v-stack>
+</v-stack>
+<script>
+    fetch({{filePath}})
+        .then((response) => response.text())
+        .then(text => {
+            document.getElementById('content').innerHTML = marked.parse(text);
+        })
+</script>
