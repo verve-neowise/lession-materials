@@ -1,0 +1,7 @@
+{
+    "number": 3,
+    "theme": "Query and Path Params",
+    "description": "The path parameter defines the resource location, while the query parameter defines sort, pagination, or filter operations.",
+    "date": "08.11.2022",
+    "tags": ["express", "cors", "handlebars"]
+}

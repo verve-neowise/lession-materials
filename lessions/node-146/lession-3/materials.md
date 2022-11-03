@@ -1,0 +1,6 @@
+### What are Path Parameters?
+Path parameters are request parameters attached to a URL that point to a specific REST API resource. The path parameter is separated from the URL by a `/`, and from the query parameter(s) by a question mark (`?`). The path parameter defines the resource location, while the query parameter defines sort, pagination, or filter operations. The user's input (the query) is passed as a variable in the query parameter, while each path parameter must be substituted with an actual value when the client makes an API call. The path parameter is contained within curly braces.
+
+### Path Parameter Example
+
+Path parameters are part of the endpoint and are required. For example, `/users/{id}`, `{id}` is the path parameter of the endpoint `/users`- it is pointing to a specific user's record. An endpoint can have multiple path parameters, like in the example `/organizations/{orgId}/members/{memberId}`. This would be pointing to a specific member's record within a specific organization, with both `{orgID}` and `{memberID}` requiring variables.
